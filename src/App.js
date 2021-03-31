@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Components/Home/Home";
 import Orders from "./Components/Orders/Orders";
@@ -7,10 +7,13 @@ import Login from "./Components/Login/Login";
 import Deals from "./Components/Deals/Deals";
 import Admin from "./Components/Admin/Admin";
 import Checkout from "./Components/Checkouts/Checkout";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
+export const UserContext = createContext();
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <div className="App">
+    <UserContext.Provider value={ [loggedInUser, setLoggedInUser] } >
       <Router>
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,25 +62,25 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/orders">
+            <PrivateRoute path="/orders">
               <Orders />
-            </Route>
-            <Route path="/admin">
+            </PrivateRoute>
+            <PrivateRoute path="/admin">
               <Admin />
-            </Route>
+            </PrivateRoute>
             <Route path="/deals">
               <Deals />
             </Route>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/checkout">
+            <Route path="/checkout/:name">
               <Checkout/>
             </Route>
           </Switch>
         </div>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 

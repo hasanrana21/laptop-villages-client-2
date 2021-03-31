@@ -90,3 +90,15 @@
     padding: 10px 20px;
     border-radius: 4px;
   }
+
+  .manage-product-title {
+    background-color: #ddd;
+    border-radius: 15px;
+}
+  .manage-product-title h6 {
+      font-size: 18px;
+      font-weight: 600;
+      color: gray;
+      margin-top: 20px;
+      margin-bottom: 15px;
+  }

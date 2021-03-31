@@ -1,12 +1,16 @@
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import ManageProduct from '../ManageProduct/ManageProduct';
 import './Admin.css';
 
 const Admin = () => {
     const { register, handleSubmit, errors } = useForm();
     const [cardImage, setCardImage] = useState(null);
-    
+    const [manageProducts, setManageProducts] = useState([]);
+
+
     const onSubmit = data => {
         const cardData = {
             name: data.name,
@@ -43,6 +47,15 @@ const Admin = () => {
 
     }
 
+    useEffect(() => {
+        fetch('http://localhost:5000/cards')
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            setManageProducts(data)
+        })
+    }, [])
+
     return (
         <div className="row">
             <div className="sideBar col-md-3">
@@ -57,7 +70,21 @@ const Admin = () => {
 
             <div className="col-md-9">
                 <div className="tab-content" id="v-pills-tabContent">
-                    <div className="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">Manage Option is Under the Construction</div>
+                    <div className="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        
+                        <div className="d-flex justify-content-evenly manage-product-title">
+                                <h6>Laptop Name</h6>
+                                <h6>Company Name</h6>
+                                <h6>Price</h6>
+                                <h6>Action</h6>
+                            <hr/>
+                        </div>
+                        {
+                            manageProducts.map(product => <ManageProduct product={product}></ManageProduct>)
+                        }
+
+
+                    </div>
                     <div className="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -80,7 +107,7 @@ const Admin = () => {
                         
 
                     </div>
-                    <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Edit</div>
+                    <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><h4 className="text-center">Edit Page is Under The Construction</h4></div>
                 </div>
             </div>
         </div>

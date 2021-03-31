@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Cards from '../Cards/Cards';
+import Checkout from '../Checkouts/Checkout';
 import './Home.css';
 
 
@@ -11,7 +12,6 @@ const Home = () => {
         .then(res => res.json())
         .then(data => {
             setCards(data);
-            console.log(data)
         })
     }, [])
     return (

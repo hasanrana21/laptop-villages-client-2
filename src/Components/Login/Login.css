@@ -1,0 +1,13 @@
+.google-sign-btn button{
+    margin: 12% auto;
+    font-size: 28px;
+    border-radius: 50px;
+    background-color: #ec5990;
+}
+.googleIcon {
+    font-size: 31px;
+    color: #2ddf00;
+}
+.google-txt{
+    margin-top: 20px;
+}
