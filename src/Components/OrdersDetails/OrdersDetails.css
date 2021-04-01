@@ -1,5 +1,7 @@
 .order-info{
     margin: 25px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
 }
 .order-image img{
     width: 150px;
@@ -16,4 +18,10 @@
 }
 .order-txt h6{
     color: gray
+}
+.order-delete{
+    margin-top: 40px;
+    font-size: 27px;
+    color: red;
+    cursor: pointer;
 }

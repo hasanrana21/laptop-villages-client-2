@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./Checkout.css";
 import Grid from "@material-ui/core/Grid";
@@ -7,14 +7,16 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from "@material-ui/pickers";
+import { UserContext } from "../../App";
 
 const Checkout = () => {
   const { _id } = useParams();
   console.log(_id);
   const [selected, setSelected] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/cards")
+    fetch("https://apple-cobbler-19312.herokuapp.com/cards")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -35,9 +37,14 @@ const Checkout = () => {
     };
 
   const saveOrder = () => {
-   const newOrder = {...selectedDate, ...evenData}
+    const loggedUser = {
+      userEmail: loggedInUser.email,
+      userName: loggedInUser.displayName
+    }
+    console.log(loggedUser);
+   const newOrder = {...selectedDate, ...evenData, ...loggedUser}
    console.log(newOrder);
-    fetch("http://localhost:5000/addOrders", {
+    fetch("https://apple-cobbler-19312.herokuapp.com/addOrders", {
       method: "POST",
       headers: {
         "Content-Type": "Application/json"

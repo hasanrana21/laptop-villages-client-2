@@ -8,7 +8,7 @@ const Home = () => {
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/cards')
+        fetch('https://apple-cobbler-19312.herokuapp.com/cards')
         .then(res => res.json())
         .then(data => {
             setCards(data);
