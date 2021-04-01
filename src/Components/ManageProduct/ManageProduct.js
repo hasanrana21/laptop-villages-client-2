@@ -1,13 +1,25 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ManageProduct.css';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ManageProduct = (props) => {
     const {name, company, price, _id} = props.product;
+    const [deleted, setDeleted] = useState();
+
+    // useEffect(() =>{
+    //     fetch(`http://localhost:5000/card/${_id}`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data)
+    //         setDeleted(data);
+    //     })
+        
+    // }, [])
     
-    const handleDelete = () => {
-        // console.log('delete clicked')
+
+    const handleDelete = (id) => {
+        console.log('delete clicked', id)
     }
     return (
         <div className="row manage-products">
