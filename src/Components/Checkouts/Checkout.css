@@ -2,6 +2,10 @@
     color: gray;
 
 }
+.checkout-save{
+    margin-top: 10%;
+}
 .checkout-btn {
     margin-left: 90%;
+    margin-top: -5%;
 }

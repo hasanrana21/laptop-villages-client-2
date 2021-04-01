@@ -1,0 +1,19 @@
+.order-info{
+    margin: 25px;
+}
+.order-image img{
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 12px gray;
+}
+.order-txt {
+    margin-top: 30px;
+    padding-left: 40px;
+}
+.order-txt h5{
+    color: lightslategrey
+}
+.order-txt h6{
+    color: gray
+}

@@ -10,7 +10,7 @@
 .card-txt img{
     width: 250px;
     height: 200px;
-    padding: 15px;
+    padding: 8px;
     background-color: #ddd;
     border-radius: 8px;
 }
@@ -24,7 +24,12 @@
 .card-button{
     margin-top: 20px;
 }
-.cards h5, p{
+.cards h5{
+    padding-left: 17px;
+    margin-bottom: -5px;
+    line-height: 30px;
+}
+.cards p{
     padding-left: 17px;
     margin-bottom: -5px;
     line-height: 30px;

@@ -73,9 +73,9 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/checkout/:_id">
+            <PrivateRoute path="/checkout/:_id">
               <Checkout/>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </div>
       </Router>
