@@ -1,4 +1,5 @@
-import { faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { faPencilAlt, faPlus, faThLarge } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -52,7 +53,7 @@ const Admin = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data);
-            setManageProducts(data)
+            setManageProducts(data);
         })
     }, [])
 
@@ -60,16 +61,16 @@ const Admin = () => {
         <div className="row">
             <div className="sideBar col-md-3">
                 <div className="d-flex align-items-start">
-                    <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button className="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Manage Product</button>
-                        <button className="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true">Add Product</button>
-                        <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Edit Product</button>
+                    <div className="nav container flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button className="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false"> <FontAwesomeIcon icon={faThLarge} /> Manage Product</button>
+                        <button className="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="true"> <FontAwesomeIcon icon={faPlus} /> Add Product</button>
+                        <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"> <FontAwesomeIcon icon={faPencilAlt} /> Edit Product</button>
                     </div>
                 </div>
             </div>
 
             <div className="col-md-9">
-                <div className="tab-content" id="v-pills-tabContent">
+                <div className="tab-content container" id="v-pills-tabContent">
                     <div className="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         
                         <div className="d-flex justify-content-evenly manage-product-title">
@@ -80,7 +81,7 @@ const Admin = () => {
                             <hr/>
                         </div>
                         {
-                            manageProducts.map(product => <ManageProduct product={product}></ManageProduct>)
+                            manageProducts.map(product => <ManageProduct product={product} key={product._id}></ManageProduct>)
                         }
 
 
@@ -107,7 +108,7 @@ const Admin = () => {
                         
 
                     </div>
-                    <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><h4 className="text-center">Edit Page is Under The Construction</h4></div>
+                    <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><h4 className="text-center mt-5">Edit Page is Under The Construction</h4></div>
                 </div>
             </div>
         </div>

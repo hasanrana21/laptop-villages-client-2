@@ -1,5 +1,9 @@
 .checkout-table h5{
     color: gray;
 }
-.checkout-table h4{
+.checkout-save h4 {
+    width: 80%;
+}
+.checkout-btn {
+    margin-left: 75%;
 }

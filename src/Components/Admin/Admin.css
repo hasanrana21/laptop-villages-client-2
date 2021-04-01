@@ -1,7 +1,6 @@
 .sideBar {
-    background-color: cyan;
+    background-color: #bf1650;
     margin-top: -16px;
-    padding-left: 125px;
     height: 100vh;
 }
   
@@ -39,7 +38,7 @@
   
   button[type="submit"],
   input[type="submit"] {
-    background: #ec5990;
+    background: #bf1650;
     color: #ddd;
     text-transform: uppercase;
     border: none;
@@ -52,7 +51,7 @@
   
   button[type="submit"]:hover,
   input[type="submit"]:hover {
-    background: #bf1650;
+    background: #ec5990;
   }
   
   input[type="button"]:hover {

@@ -3,17 +3,21 @@ import { useParams } from 'react-router';
 import './Checkout.css';
 
 const Checkout = () => {
-    const {name} = useParams();
+    const {_id} = useParams();
+    console.log(_id)
     const [selected, setSelected] = useState([]);
+    // console.log(selected)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cards/${name}`)
-        .then( res => res.json())
+        fetch('http://localhost:5000/cards')
+        .then( response => response.json())
         .then(data => {
             console.log(data);
             setSelected(data);
         })
     }, [])
+    const evenData = selected.find(product => product?._id === _id)
+    console.log(evenData?.name)
     return (
         <div className="container">
             <h1 className="text-muted">CheckOut...</h1>
@@ -31,14 +35,19 @@ const Checkout = () => {
                 <hr/>
                 <div className="row">
                     <div className="col-md-6">
-                        <h4>NoteBook Air Xioami {selected.name}</h4>
+                        <h4>{evenData?.name}</h4>
                     </div>
                     <div className="col-md-3">
                         <h4>1</h4> 
                     </div>
                     <div className="col-md-3">
-                        <h4>$1450</h4>
+                        <h4>${evenData?.price}</h4>
                     </div>
+                </div>
+                <hr/>
+                <div className="checkout-save">
+                    <h4 className="text-end">Total: {evenData?.price}</h4>
+                    <button className="checkout-btn">SAVE</button>
                 </div>
             </div>
         </div>

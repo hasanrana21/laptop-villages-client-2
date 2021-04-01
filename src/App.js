@@ -56,7 +56,6 @@ function App() {
             </div>
           </nav>
 
-          <hr />
 
           <Switch>
             <Route exact path="/">
@@ -74,7 +73,7 @@ function App() {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/checkout/:name">
+            <Route path="/checkout/:_id">
               <Checkout/>
             </Route>
           </Switch>

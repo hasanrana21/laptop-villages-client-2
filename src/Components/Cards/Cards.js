@@ -11,11 +11,11 @@ const Cards = (props) => {
             <div className="card-txt">
                 <img src={image} alt=""/>
                 <h5>{name}</h5>
-                <p>by: {company} {_id}</p>
+                <p>by: {company}</p>
             </div>
             <div className="card-bottom d-flex justify-content-center">
                 <h4 className="card-price">${price}</h4>
-                <Link to={`/checkout/${name}`} >
+                <Link to={`/checkout/${_id}`} >
                     <button className="btn btn-primary card-button">Buy Now</button>
                 </Link>
             </div>
