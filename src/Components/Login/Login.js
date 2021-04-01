@@ -13,7 +13,7 @@ if(firebase.apps.length === 0){
 }
 
 const Login = () => {
-    const [google, setGoggle] = useState([]);
+    // const [google, setGoggle] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     const history = useHistory();
@@ -35,6 +35,7 @@ const Login = () => {
             var errorMessage = error.message;
             var email = error.email;
             var credential = error.credential;
+            console.log(errorCode, errorMessage, email, credential)
         });
     }
 

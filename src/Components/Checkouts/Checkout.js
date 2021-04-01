@@ -38,7 +38,7 @@ const Checkout = () => {
 
   const saveOrder = () => {
     const loggedUser = {
-      userEmail: loggedInUser.email,
+      email: loggedInUser.email,
       userName: loggedInUser.displayName
     }
     console.log(loggedUser);
