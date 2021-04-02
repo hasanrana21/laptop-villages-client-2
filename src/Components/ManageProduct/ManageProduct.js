@@ -7,20 +7,26 @@ const ManageProduct = (props) => {
     const {name, company, price, _id} = props.product;
     const [deleted, setDeleted] = useState();
 
-    useEffect(() =>{
-        fetch(`https://apple-cobbler-19312.herokuapp.com/card/${_id}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            setDeleted(data);
-        })
+    // useEffect(() =>{
         
-    }, [])
-    
+        
+    // }, [])
 
-    const handleDelete = (id) => {
-        console.log('delete clicked', id)
-    }
+    // const handleDelete = (id) => {
+    //     console.log('delete clicked', id)
+    //     fetch('https://apple-cobbler-19312.herokuapp.com/delete/'+id,{
+    //         method: 'DELETE',
+    //         headers: {
+    //             'Content-Type' : 'application/json'
+    //         }
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log("deleted successfully", data)
+    //         setDeleted(data);
+    //     })
+    // }
+    // console.log(deleted);
     return (
         <div className="row manage-products">
             <div className="col-md-3">
@@ -34,7 +40,7 @@ const ManageProduct = (props) => {
             </div>
             <div className="col-md-3 mt-3 align">
                 <span className="edit-icon"> <FontAwesomeIcon icon={faEdit}/></span>
-                <span className="delete-icon" onClick={handleDelete(_id)}><FontAwesomeIcon icon={faTrashAlt}/></span>
+                <span className="delete-icon"><FontAwesomeIcon icon={faTrashAlt}/></span>
             </div>
         </div>
     );
