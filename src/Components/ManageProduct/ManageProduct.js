@@ -7,15 +7,15 @@ const ManageProduct = (props) => {
     const {name, company, price, _id} = props.product;
     const [deleted, setDeleted] = useState();
 
-    // useEffect(() =>{
-    //     fetch(`http://localhost:5000/card/${_id}`)
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         console.log(data)
-    //         setDeleted(data);
-    //     })
+    useEffect(() =>{
+        fetch(`https://apple-cobbler-19312.herokuapp.com/card/${_id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            setDeleted(data);
+        })
         
-    // }, [])
+    }, [])
     
 
     const handleDelete = (id) => {

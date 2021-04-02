@@ -20,7 +20,7 @@ const Admin = () => {
             image: cardImage,
         }
         console.log(cardData)
-        fetch('http://localhost:5000/addCardDetails', {
+        fetch('https://apple-cobbler-19312.herokuapp.com/addCardDetails', {
             method: 'POST',
             headers: {
                 'Content-type': 'Application/json'
@@ -49,7 +49,7 @@ const Admin = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/cards')
+        fetch('https://apple-cobbler-19312.herokuapp.com/cards')
         .then(res => res.json())
         .then(data =>{
             console.log(data);
