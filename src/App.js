@@ -16,10 +16,10 @@ function App() {
     <UserContext.Provider value={ [loggedInUser, setLoggedInUser] } >
       <Router>
         <div>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg navbar-light menubar">
             <div className="container">
-              <Link className="navbar-brand" to="/">
-                Laptop Village
+              <Link className="navbar-brand menubar-logo" to="/">
+                <span>Laptop Village</span>
               </Link>
               <button
                 className="navbar-toggler"
@@ -35,21 +35,21 @@ function App() {
               <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                   <Link className="nav-link active" aria-current="page" to="/">
-                    Home
+                    <span className="menu">Home</span>
                   </Link>
                   <Link className="nav-link" to="/orders">
-                    Orders
+                    <span className="menu">Orders</span>
                   </Link>
                   <Link className="nav-link" to="/admin">
-                    Admin
+                    <span className="menu">Admin</span>
                   </Link>
                   <Link
                     className="nav-link" to="/deals">
-                    Deals
+                    <span className="menu">Deals</span>
                   </Link>
                   <Link
                     className="nav-link" to="/login">
-                    Login
+                    <span className="menu">Login</span>
                   </Link>
                 </div>
               </div>

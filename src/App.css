@@ -1,1 +1,12 @@
-
+.menu{
+    font-size: 21px;
+    font-weight: 400;
+    color: whitesmoke;
+    padding-right: 10px;
+}
+.menubar-logo span{
+    color: whitesmoke;
+}
+.menubar{
+    background-color: #1a202c;
+}

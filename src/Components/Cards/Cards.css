@@ -23,10 +23,13 @@
 }
 .card-button{
     margin-top: 20px;
+    background-color: #c9151b;
+    color: whitesmoke;
 }
 .cards h5{
+    padding-top: 10px;
     padding-left: 17px;
-    margin-bottom: -5px;
+    margin-bottom: -3px;
     line-height: 30px;
 }
 .cards p{

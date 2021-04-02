@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Cards.css';
 
@@ -6,7 +6,6 @@ const Cards = (props) => {
     const { name, price, image, company, _id } = props.card;
 
     return (
-        <>
         <div className="col-md-3 cards">
             <div className="card-txt">
                 <img src={image} alt=""/>
@@ -16,11 +15,10 @@ const Cards = (props) => {
             <div className="card-bottom d-flex justify-content-center">
                 <h4 className="card-price">${price}</h4>
                 <Link to={`/checkout/${_id}`} >
-                    <button className="btn btn-primary card-button">Buy Now</button>
+                    <button className="btn card-button">Buy Now</button>
                 </Link>
             </div>
         </div>
-        </>
     );
 };
 

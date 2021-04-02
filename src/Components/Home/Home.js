@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Cards from '../Cards/Cards';
-import Checkout from '../Checkouts/Checkout';
 import './Home.css';
 
 
@@ -19,6 +18,9 @@ const Home = () => {
             {
                 cards.map(card => <Cards card={card} key={card._id}></Cards>)
             }
+            <div class="spinner-border text-info spinner" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
     );
 };

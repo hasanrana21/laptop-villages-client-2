@@ -26,13 +26,13 @@ const ManageProduct = (props) => {
             <div className="col-md-3">
                 <h6>{name}</h6>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 align">
                 <h6>{company}</h6>
             </div>
-            <div className="col-md-3">
+            <div className="col-md-3 align">
                 <h6>${price}</h6>
             </div>
-            <div className="col-md-3 mt-3">
+            <div className="col-md-3 mt-3 align">
                 <span className="edit-icon"> <FontAwesomeIcon icon={faEdit}/></span>
                 <span className="delete-icon" onClick={handleDelete(_id)}><FontAwesomeIcon icon={faTrashAlt}/></span>
             </div>

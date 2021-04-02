@@ -20,7 +20,7 @@ const Orders = () => {
     }, [])
     return (
         <div className="container">
-            <h4 className="text-end">My Cart <FontAwesomeIcon icon={faShoppingCart} className="fs-2" />{ordered.length}</h4>
+            <h4 className="text-end shopping-txt">My Cart <FontAwesomeIcon icon={faShoppingCart} className="fs-2 shopping-icon" />{ordered.length}</h4>
             {
                 ordered.map(order => <OrdersDetails order={order} key={order._id}></OrdersDetails>)
             }
