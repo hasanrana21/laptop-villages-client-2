@@ -19,7 +19,9 @@ const Home = () => {
         <div className="row container m-auto">
             {loading ? 
                 cards.map(card => <Cards card={card} key={card._id}></Cards>)
+                
                 :
+
                 <div class="spinner-border text-info spinner" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
