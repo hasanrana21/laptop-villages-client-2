@@ -42,8 +42,8 @@ const Checkout = () => {
       userName: loggedInUser.displayName
     }
     console.log(loggedUser);
-   const newOrder = {...selectedDate, ...evenData, ...loggedUser}
-   console.log(newOrder);
+    const newOrder = {...selectedDate, ...evenData, ...loggedUser};
+    console.log(newOrder);
     fetch("https://apple-cobbler-19312.herokuapp.com/addOrders", {
       method: "POST",
       headers: {
@@ -51,13 +51,13 @@ const Checkout = () => {
       },
       body: JSON.stringify(newOrder),
     })
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         console.log(data);
       });
   };
   const evenData = selected.find((product) => product?._id === _id);
-  console.log(evenData?.name);
+  console.log(evenData);
 
 
   return (

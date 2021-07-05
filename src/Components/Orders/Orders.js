@@ -17,7 +17,7 @@ const Orders = () => {
             console.log(data);
             setOrdered(data);
         })
-    }, [])
+    }, [loggedInUser.email])
     return (
         <div className="container">
             <h4 className="text-end shopping-txt">My Cart <FontAwesomeIcon icon={faShoppingCart} className="fs-2 shopping-icon" />{ordered.length}</h4>
